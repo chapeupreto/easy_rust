@@ -1802,13 +1802,13 @@ The compiler says, "What? There's no `.ddd()` method for seasons and no `.thd()`
 error[E0599]: no method named `ddd` found for array `[&str; 4]` in the current scope
  --> src\main.rs:4:13
   |
-4 |     seasons.ddd(); // 
+4 |     seasons.ddd(); //
   |             ^^^ method not found in `[&str; 4]`
 
 error[E0599]: no method named `thd` found for array `[&str; 5]` in the current scope
  --> src\main.rs:5:14
   |
-5 |     seasons2.thd(); // 
+5 |     seasons2.thd(); //
   |              ^^^ method not found in `[&str; 5]`
 ```
 
@@ -11461,7 +11461,7 @@ To begin learning external crates, we will start with the most common one: `rand
 
 ### rand
 
-Did you notice that we didn't use any random numbers yet? That's because random numbers aren't in the standard library. But there are a lot of crates that are "almost standard library" because everybody uses them. In any case, it's very easy to bring in a crate. If you have Rust on your computer, there is a file called `cargo.toml` that has this information. A `cargo.toml` file looks like this when you start:
+Did you notice that we didn't use any random numbers yet? That's because random numbers aren't in the standard library. But there are a lot of crates that are "almost standard library" because everybody uses them. In any case, it's very easy to bring in a crate. If you have Rust on your computer, there is a file called `Cargo.toml` that has this information. A `Cargo.toml` file looks like this when you start:
 
 ```text
 [package]
@@ -11492,7 +11492,7 @@ rand = "0.7.3"
 
 And then Cargo will do the rest for you. Then you can start writing code like [this example code](https://docs.rs/rand/0.7.3/rand/) on the `rand` document website. To get to the documents you can click on the `docs` button in [the page on crates.io](https://crates.io/crates/rand).
 
-So that's enough about Cargo: we are still using just the Playground. Luckily, the Playground already has the top 100 crates installed. So you don't need to write in `cargo.toml` yet. On the Playground you can imagine that it has a long list like this with 100 crates:
+So that's enough about Cargo: we are still using just the Playground. Luckily, the Playground already has the top 100 crates installed. So you don't need to write in `Cargo.toml` yet. On the Playground you can imagine that it has a long list like this with 100 crates:
 
 ```text
 [dependencies]
@@ -11506,7 +11506,7 @@ That means that to use `rand`, you can just do this.
 ```rust
 use rand; // This means the whole crate rand
           // On your computer you can't just write this;
-          // you need to write in the cargo.toml file first
+          // you need to write in the Cargo.toml file first
 
 fn main() {
     for _ in 0..5 {
@@ -13421,7 +13421,7 @@ By the way, the `--release` part of the command is called a `flag`. That means e
 Some other things you need to know are:
 
 - `cargo new`. You do this to create a new Rust project. After `new`, write the name of the project and `cargo` will make the folder and all the files you need.
-- `cargo clean`. When you add crates to `cargo.toml`, the computer will download all the files it needs and they can take a lot of space. If you don't want them on your computer anymore, type `cargo clean`.
+- `cargo clean`. When you add crates to `Cargo.toml`, the computer will download all the files it needs and they can take a lot of space. If you don't want them on your computer anymore, type `cargo clean`.
 
 One more thing about the compiler: it only takes the most time when you use `cargo build` or `cargo run` the first time. After that it will remember, and it will compile fast again. But if you use `cargo clean` and then run `cargo build`, it will have to compile slowly one more time.
 
@@ -13896,7 +13896,7 @@ It's very simple:
 use std::fs;
 
 fn main() -> std::io::Result<()> {
-    fs::write("calvin_with_dad.txt", 
+    fs::write("calvin_with_dad.txt",
 "Calvin: Dad, how come old photographs are always black and white? Didn't they have color film back then?
 Dad: Sure they did. In fact, those photographs *are* in color. It's just the *world* was black and white then.
 Calvin: Really?
@@ -13918,7 +13918,7 @@ use std::fs::File;
 use std::io::Read; // this is to use the function .read_to_string()
 
 fn main() -> std::io::Result<()> {
-     fs::write("calvin_with_dad.txt", 
+     fs::write("calvin_with_dad.txt",
 "Calvin: Dad, how come old photographs are always black and white? Didn't they have color film back then?
 Dad: Sure they did. In fact, those photographs *are* in color. It's just the *world* was black and white then.
 Calvin: Really?
@@ -13938,7 +13938,7 @@ Dad: Yep. The world didn't turn color until sometimes in the 1930s...")?;
 That will print:
 
 ```rust
-CALVIN: DAD, HOW COME OLD PHOTOGRAPHS ARE ALWAYS BLACK AND WHITE? DIDN'T THEY HAVE COLOR FILM BACK THEN? DAD: SURE THEY DID. IN 
+CALVIN: DAD, HOW COME OLD PHOTOGRAPHS ARE ALWAYS BLACK AND WHITE? DIDN'T THEY HAVE COLOR FILM BACK THEN? DAD: SURE THEY DID. IN
 FACT, THOSE PHOTOGRAPHS *ARE* IN COLOR. IT'S JUST THE *WORLD* WAS BLACK AND WHITE THEN. CALVIN: REALLY? DAD: YEP. THE WORLD DIDN'T TURN COLOR UNTIL SOMETIMES IN THE 1930S...
 ```
 
@@ -13975,7 +13975,7 @@ use std::fs;
 use std::fs::OpenOptions;
 
 fn main() -> std::io::Result<()> {
-     fs::write("calvin_with_dad.txt", 
+     fs::write("calvin_with_dad.txt",
 "Calvin: Dad, how come old photographs are always black and white? Didn't they have color film back then?
 Dad: Sure they did. In fact, those photographs *are* in color. It's just the *world* was black and white then.
 Calvin: Really?
@@ -14003,7 +14003,7 @@ use std::fs::OpenOptions;
 use std::io::Write;
 
 fn main() -> std::io::Result<()> {
-    fs::write("calvin_with_dad.txt", 
+    fs::write("calvin_with_dad.txt",
 "Calvin: Dad, how come old photographs are always black and white? Didn't they have color film back then?
 Dad: Sure they did. In fact, those photographs *are* in color. It's just the *world* was black and white then.
 Calvin: Really?
